@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chats",
+  "info": {
+    "name": "Chat",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "participant1": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "participant2": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "job": {
+      "model": "job"
+    },
+    "messages": {
+      "via": "chat",
+      "collection": "chat-messages"
+    }
+  }
+}

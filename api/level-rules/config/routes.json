@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/level-rules",
+      "handler": "level-rules.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/level-rules/count",
+      "handler": "level-rules.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/level-rules/:id",
+      "handler": "level-rules.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/level-rules",
+      "handler": "level-rules.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/level-rules/:id",
+      "handler": "level-rules.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/level-rules/:id",
+      "handler": "level-rules.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

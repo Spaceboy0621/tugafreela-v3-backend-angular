@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "disputes",
+  "info": {
+    "name": "Dispute",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "job": {
+      "via": "dispute",
+      "model": "job"
+    },
+    "phase": {
+      "type": "enumeration",
+      "enum": [
+        "first",
+        "second"
+      ],
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "open",
+        "closed"
+      ]
+    },
+    "percentage_freela": {
+      "type": "integer",
+      "default": 0
+    },
+    "percentage_owner": {
+      "type": "integer",
+      "default": 0
+    },
+    "messages": {
+      "collection": "dispute-messages",
+      "via": "dispute"
+    },
+    "deal_proposed_by": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "messages_moderator": {
+      "collection": "dispute-messages-moderator",
+      "via": "dispute"
+    },
+    "justification": {
+      "type": "text"
+    },
+    "deal_proposal": {
+      "type": "enumeration",
+      "enum": [
+        "made_by_parts",
+        "made_by_moderator",
+        "none"
+      ]
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bank_accounts",
+  "info": {
+    "name": "Bank Account",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "pf_pj": {
+      "type": "enumeration",
+      "enum": [
+        "PF",
+        "PJ"
+      ]
+    },
+    "name_of_holder": {
+      "type": "string"
+    },
+    "owner": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "bank": {
+      "type": "string"
+    },
+    "iban": {
+      "type": "string"
+    },
+    "swift": {
+      "type": "string"
+    },
+    "iban_code": {
+      "type": "string"
+    },
+    "checked": {
+      "type": "boolean",
+      "default": false
+    },
+    "primary": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

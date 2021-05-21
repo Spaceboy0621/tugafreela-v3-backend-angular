@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/refunds-histories",
+      "handler": "refunds-history.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/refunds-histories/count",
+      "handler": "refunds-history.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/refunds-histories/:id",
+      "handler": "refunds-history.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/refunds-histories",
+      "handler": "refunds-history.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/refunds-histories/:id",
+      "handler": "refunds-history.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/refunds-histories/:id",
+      "handler": "refunds-history.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

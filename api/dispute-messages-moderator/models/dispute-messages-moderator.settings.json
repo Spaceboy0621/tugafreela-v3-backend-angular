@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dispute_messages_moderators",
+  "info": {
+    "name": "Dispute Messages Moderator",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "message": {
+      "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "with_freela",
+        "with_client"
+      ]
+    },
+    "moderator": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "attachments": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "dispute": {
+      "via": "messages_moderator",
+      "model": "dispute"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proposals",
+  "info": {
+    "name": "proposal",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "value": {
+      "type": "decimal"
+    },
+    "average_time": {
+      "type": "integer"
+    },
+    "job": {
+      "via": "proposals",
+      "model": "job"
+    },
+    "freelancer": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "term": {
+      "type": "integer"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Aceita",
+        "Recusada",
+        "Aberta"
+      ],
+      "default": "Aberta"
+    }
+  }
+}

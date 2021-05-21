@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "refunds_histories",
+  "info": {
+    "name": "Refunds history"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "description": {
+      "type": "string"
+    },
+    "value": {
+      "type": "decimal"
+    },
+    "invoice": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

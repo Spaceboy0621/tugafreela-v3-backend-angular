@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "questions",
+  "info": {
+    "name": "Questions",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "question": {
+      "type": "text"
+    },
+    "job": {
+      "via": "questions",
+      "model": "job"
+    },
+    "freelancer": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

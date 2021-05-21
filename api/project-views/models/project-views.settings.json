@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_views",
+  "info": {
+    "name": "Project Views"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "job": {
+      "model": "job"
+    },
+    "viewer": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/credit-cards",
+      "handler": "credit-card.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/credit-cards/count",
+      "handler": "credit-card.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/credit-cards/:id",
+      "handler": "credit-card.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/credit-cards",
+      "handler": "credit-card.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/credit-cards/:id",
+      "handler": "credit-card.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/credit-cards/:id",
+      "handler": "credit-card.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

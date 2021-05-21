@@ -1,0 +1,176 @@
+{
+  "kind": "collectionType",
+  "collectionName": "users-permissions_user",
+  "info": {
+    "name": "Usuário",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false,
+    "timestamps": true
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": true,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "configurable": false,
+      "private": true
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "model": "role",
+      "via": "users",
+      "plugin": "users-permissions",
+      "configurable": false
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "nick": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "nif": {
+      "type": "integer",
+      "unique": true,
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Freelancer",
+        "Cliente",
+        "Moderador",
+        "Admin"
+      ]
+    },
+    "ratings": {
+      "collection": "rating",
+      "via": "user"
+    },
+    "skills": {
+      "collection": "skill"
+    },
+    "categories": {
+      "collection": "category"
+    },
+    "hour_value": {
+      "type": "decimal"
+    },
+    "professional_description": {
+      "type": "string"
+    },
+    "about": {
+      "type": "text"
+    },
+    "experience": {
+      "type": "text"
+    },
+    "photo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "freelancer_earning": {
+      "type": "decimal",
+      "min": 0,
+      "default": 0
+    },
+    "premium": {
+      "type": "boolean",
+      "default": false
+    },
+    "complete": {
+      "type": "boolean",
+      "default": false
+    },
+    "level": {
+      "type": "integer"
+    },
+    "street": {
+      "type": "string"
+    },
+    "number": {
+      "type": "string"
+    },
+    "floor": {
+      "type": "string"
+    },
+    "cep": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "birthDate": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "accountStatus": {
+      "type": "enumeration",
+      "enum": [
+        "active",
+        "inactive"
+      ],
+      "default": "active"
+    },
+    "first_buy_level": {
+      "type": "datetime"
+    },
+    "quantity_buy_level": {
+      "type": "integer",
+      "max": 3
+    },
+    "payment_verified": {
+      "type": "boolean",
+      "default": false
+    },
+    "client_spending": {
+      "type": "decimal",
+      "default": 0
+    },
+    "views": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

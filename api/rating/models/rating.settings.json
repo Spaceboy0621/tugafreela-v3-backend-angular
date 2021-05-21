@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ratings",
+  "info": {
+    "name": "Avaliações",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "rating": {
+      "type": "integer",
+      "required": true,
+      "max": 5,
+      "min": 1
+    },
+    "user": {
+      "via": "ratings",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "valuer": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "comment": {
+      "type": "string"
+    },
+    "job": {
+      "model": "job"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chat-messages",
+  "info": {
+    "name": "Chat Messages",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "message": {
+      "type": "text"
+    },
+    "sender": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "attachments": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "read_at": {
+      "type": "datetime"
+    },
+    "chat": {
+      "model": "chat",
+      "via": "messages"
+    },
+    "receiver": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "archived": {
+      "type": "boolean",
+      "default": false
+    },
+    "favorite": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

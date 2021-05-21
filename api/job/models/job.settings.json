@@ -1,0 +1,139 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs",
+  "info": {
+    "name": "job",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "categories": {
+      "collection": "category"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "minLength": 150,
+      "maxLength": 850
+    },
+    "skills": {
+      "collection": "skill"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Fixo",
+        "Hora"
+      ],
+      "required": true
+    },
+    "files_attached": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "ativo",
+        "aguardando_pagamento",
+        "em_andamento",
+        "solicitado_novo_prazo",
+        "concluido_pelo_freelancer",
+        "concluido",
+        "fechado_pelo_cliente",
+        "fechado_pelo_freelancer",
+        "fechado_a_favor_do_freelancer",
+        "fechado_a_favor_do_cliente",
+        "fechado_em_divisao",
+        "em_disputa",
+        "cancelado",
+        "pausado",
+        "rodada_fechada"
+      ],
+      "default": "ativo",
+      "required": true
+    },
+    "owner": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "freelancer": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "proposals": {
+      "collection": "proposal",
+      "via": "job"
+    },
+    "questions": {
+      "collection": "questions",
+      "via": "job"
+    },
+    "deadline": {
+      "type": "datetime"
+    },
+    "client_rated": {
+      "type": "boolean",
+      "default": false
+    },
+    "freela_rated": {
+      "type": "boolean",
+      "default": false
+    },
+    "agreed_value": {
+      "type": "decimal",
+      "default": 0
+    },
+    "dispute": {
+      "model": "dispute",
+      "via": "job"
+    },
+    "new_deadline": {
+      "type": "datetime"
+    },
+    "date_concluded_by_freela": {
+      "type": "datetime"
+    },
+    "hours": {
+      "type": "integer"
+    },
+    "valueHour": {
+      "type": "string"
+    },
+    "valueJob": {
+      "type": "decimal"
+    },
+    "level_experience": {
+      "type": "integer"
+    },
+    "urgent": {
+      "type": "boolean",
+      "default": false
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "paused_in": {
+      "type": "datetime"
+    },
+    "time_paused": {
+      "type": "integer"
+    }
+  }
+}

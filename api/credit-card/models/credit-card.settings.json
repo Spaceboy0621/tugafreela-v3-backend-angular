@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "credit_cards",
+  "info": {
+    "name": "Credit Card",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "surname": {
+      "type": "string"
+    },
+    "cvv": {
+      "type": "integer"
+    },
+    "name_on_the_card": {
+      "type": "string"
+    },
+    "number": {
+      "type": "string"
+    },
+    "flag": {
+      "type": "string"
+    },
+    "expiration_date_month": {
+      "type": "string"
+    },
+    "expiration_date_year": {
+      "type": "string"
+    },
+    "card_owner": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "type_card": {
+      "type": "enumeration",
+      "enum": [
+        "credito",
+        "debito"
+      ]
+    },
+    "country": {
+      "type": "string"
+    },
+    "checked": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

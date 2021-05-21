@@ -1,0 +1,92 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/jobs",
+      "handler": "job.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/jobs/my-jobs/:user/:type",
+      "handler": "job.myJobs",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/jobs/count",
+      "handler": "job.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/jobs/:id",
+      "handler": "job.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/jobs/status/:status",
+      "handler": "job.getByStatus",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/jobs/name/:name",
+      "handler": "job.getByName",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/jobs/owner/:owner",
+      "handler": "job.getByOwner",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+			"method": "POST",
+			"path": "/jobs/search",
+			"handler": "job.search",
+			"config": {
+				"policies": []
+			}
+		},
+    {
+      "method": "POST",
+      "path": "/jobs",
+      "handler": "job.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/jobs/:id",
+      "handler": "job.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/jobs/:id",
+      "handler": "job.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

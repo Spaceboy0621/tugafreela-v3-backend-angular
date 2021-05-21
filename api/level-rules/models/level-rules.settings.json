@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "level_rules",
+  "info": {
+    "name": "Level Rules"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "user_type": {
+      "type": "enumeration",
+      "enum": [
+        "freelancer",
+        "cliente"
+      ]
+    },
+    "pts_min": {
+      "type": "integer"
+    },
+    "pts_max": {
+      "type": "integer"
+    },
+    "label": {
+      "type": "enumeration",
+      "enum": [
+        "iniciante",
+        "intermediario",
+        "especialista",
+        "master"
+      ]
+    }
+  }
+}
